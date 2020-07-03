@@ -1,4 +1,6 @@
 import React from "react";
+// react-router-dom
+import { Link } from "react-router-dom";
 import * as Icon from "react-feather";
 import { Menu, Dropdown } from "antd";
 const NavBar = ({ lang, setLanguage, texts }) => {
@@ -20,10 +22,18 @@ const NavBar = ({ lang, setLanguage, texts }) => {
     <div className="header">
       <nav>
         <div className="logo" />
-        <a>{texts[lang].nav[1]}</a>
-        <a>{texts[lang].nav[2]}</a>
-        <a>{texts[lang].nav[3]}</a>
-        <a>{texts[lang].nav[4]}</a>
+        <Link to="/">
+          <a>{texts[lang].nav[1]}</a>
+        </Link>
+        <Link to="/calendar">
+          <a>{texts[lang].nav[2]}</a>
+        </Link>
+        <Link to="/ranking">
+          <a>{texts[lang].nav[3]}</a>
+        </Link>
+        <Link to="/teams">
+          <a>{texts[lang].nav[4]}</a>
+        </Link>
       </nav>
       <div className="controls">
         <Dropdown overlay={langMenu} placement="bottomLeft" arrow>

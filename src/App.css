@@ -31,9 +31,9 @@ nav {
   align-items: center;
 }
 nav a {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 700;
-  padding: 1em;
+  padding: 0.5em;
   color: #adadad;
 }
 nav a:hover {
