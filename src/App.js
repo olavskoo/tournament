@@ -22,7 +22,7 @@ function App() {
     <Router>
       <Layout style={{ height: "100%", backgroundColor: "#292d31" }}>
         <Header lang={language} setLanguage={setLanguage} texts={texts} />
-        <Content>
+        <Content style={{ height: 'auto' }}>
           <Switch>
             <Route exact path="/">
               <Home />
@@ -37,7 +37,7 @@ function App() {
             <Route path="/teams"></Route>
           </Switch>
         </Content>
-        <Footer />
+        <Footer lang={language} texts={texts} />
       </Layout>
     </Router>
   );

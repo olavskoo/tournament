@@ -1,0 +1,37 @@
+.footer-container {
+    display: flex;
+    background-color: black;
+    -webkit-box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.31);
+    -moz-box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.31);
+    box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.31);
+}
+
+.complete-logo {
+    opacity: 0.3;
+    padding: 1%;
+    width: 30%;
+}
+
+.important-links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.important-link {
+    color: #a3a3a3;
+    font-size: 0.9em;
+    padding: 0 1em;
+    margin: 0;
+}
+
+.complete-logo img {
+    width: 100%;
+}
+
+.company-info {
+    display: flex;
+    align-items: center;
+    opacity: 0.3;
+}
