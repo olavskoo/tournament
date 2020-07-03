@@ -1,0 +1,21 @@
+{
+  "es": {
+    "language": "ESPAÑOL",
+    "nav": {
+      "1": "INICIO",
+      "2": "CALENDARIO",
+      "3": "CLASIFICATORIA",
+      "4": "EQUIPOS"
+    },
+    "login_stamp": "INICIA SESIÓN"
+  },
+  "en": {
+    "nav": {
+      "1": "HOME",
+      "2": "CALENDAR",
+      "3": "RANKING",
+      "4": "TEAMS"
+    },
+    "login_stamp": "LOG IN"
+  }
+}
