@@ -11,7 +11,6 @@ const NavBar = ({ lang, setLanguage, texts }) => {
         </Menu.Item>
       ) : (
         <Menu.Item>
-          {" "}
           <a onClick={() => setLanguage("es")}>Spanish</a>
         </Menu.Item>
       )}
