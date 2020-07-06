@@ -1,6 +1,6 @@
 import React from "react";
-import './NavBar.css';
-import Logo from '../_img/Untitled-2.png'
+import "./NavBar.css";
+import Logo from "../_img/Untitled-2.png";
 // react-router-dom
 import { NavLink } from "react-router-dom";
 import * as Icon from "react-feather";
@@ -10,15 +10,19 @@ const NavBar = ({ lang, setLanguage, texts }) => {
   let isLive = true;
   const langMenu = (
     <Menu>
-      {lang == "es" ? (
+      {lang === "es" ? (
         <Menu.Item>
-          <a onClick={() => setLanguage("en")}>Inglés</a>
+          <button className="language-button" onClick={() => setLanguage("en")}>
+            Inglés
+          </button>
         </Menu.Item>
       ) : (
-          <Menu.Item>
-            <a onClick={() => setLanguage("es")}>Spanish</a>
-          </Menu.Item>
-        )}
+        <Menu.Item>
+          <button className="language-button" onClick={() => setLanguage("es")}>
+            Spanish
+          </button>
+        </Menu.Item>
+      )}
     </Menu>
   );
   return (
@@ -27,23 +31,42 @@ const NavBar = ({ lang, setLanguage, texts }) => {
         <NavLink to="/" className="logo">
           <img src={Logo} alt="" className="logo" />
         </NavLink>
-        <NavLink className="link" activeStyle={{ color: '#ff2400' }} exact to="/">
+        <NavLink
+          className="link"
+          activeStyle={{ color: "#ff2400" }}
+          exact
+          to="/"
+        >
           {texts[lang].nav[1]}
         </NavLink>
-        <NavLink className="link" activeStyle={{ color: '#ff2400' }} to="/calendar">
+        <NavLink
+          className="link"
+          activeStyle={{ color: "#ff2400" }}
+          to="/calendar"
+        >
           {texts[lang].nav[2]}
         </NavLink>
-        <NavLink className="link" activeStyle={{ color: '#ff2400' }} to="/ranking">
+        <NavLink
+          className="link"
+          activeStyle={{ color: "#ff2400" }}
+          to="/ranking"
+        >
           {texts[lang].nav[3]}
         </NavLink>
-        <NavLink className="link" activeStyle={{ color: '#ff2400' }} to="/teams">
+        <NavLink
+          className="link"
+          activeStyle={{ color: "#ff2400" }}
+          to="/teams"
+        >
           {texts[lang].nav[4]}
         </NavLink>
       </nav>
-      {isLive ? <div className="live-container controls">
-        <p className="control-stamp glow">{'\u2B24'}</p>
-        <p className="control-stamp">{texts[lang].live_stamp}</p>
-      </div> : null}
+      {isLive ? (
+        <div className="live-container controls">
+          <p className="control-stamp glow">{"\u2B24"}</p>
+          <p className="control-stamp">{texts[lang].live_stamp}</p>
+        </div>
+      ) : null}
 
       <div className="controls">
         <Dropdown overlay={langMenu} placement="bottomLeft" arrow>
