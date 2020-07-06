@@ -17,12 +17,13 @@ import { Layout } from "antd";
 const { Content } = Layout;
 
 function App() {
+  // Este State Maneja el idioma
   const [language, setLanguage] = useState("es");
   return (
     <Router>
       <Layout style={{ height: "100%", backgroundColor: "#292d31" }}>
         <Header lang={language} setLanguage={setLanguage} texts={texts} />
-        <Content style={{ height: 'auto' }}>
+        <Content style={{ height: "auto" }}>
           <Switch>
             <Route exact path="/">
               <Home />
