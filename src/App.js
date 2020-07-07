@@ -19,7 +19,7 @@ const { Content } = Layout;
 function App() {
   // Este State Maneja el idioma
   const [language, setLanguage] = useState("es");
-  let isLive = false;
+  let isLive = true;
   return (
     <Router>
       <Layout style={{ height: "100%", backgroundColor: "#292d31" }}>

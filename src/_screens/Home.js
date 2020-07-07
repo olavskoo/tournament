@@ -30,6 +30,7 @@ const Schedule = () => {
       <Event />
       <Event />
       <Event />
+      <Event />
     </Col>
   );
 };
@@ -46,7 +47,7 @@ const Stream = () => {
   );
 };
 const Home = ({ isLive, lang }) => {
-  let isSchedule = false;
+  let isSchedule = true;
   return (
     <Row style={{ height: "100%" }}>
       {/* Events COL */}
