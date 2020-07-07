@@ -3,6 +3,7 @@ import "./Home.css";
 import { Row, Col } from "antd";
 import ReactTwitchEmbedVideo from "react-twitch-embed-video";
 // Others
+import PageEnd from "../_components/PageEnd";
 import Team1 from "../_img/team1.png";
 import Team2 from "../_img/team2.png";
 const Event = () => {
@@ -34,25 +35,58 @@ const Schedule = () => {
 };
 const Stream = () => {
   return (
-    <Row style={{ height: "100%" }}>
+    <div style={{ height: "100%" }}>
       <ReactTwitchEmbedVideo
         channel="lpl"
         width={"100%"}
         height={"100%"}
         theme="dark"
       />
-    </Row>
+    </div>
   );
 };
-const Home = () => {
-  let isStreaming = true;
-  let isSchedule = true;
+const Home = ({ isLive, lang }) => {
+  let isSchedule = false;
   return (
     <Row style={{ height: "100%" }}>
+      {/* Events COL */}
       {isSchedule ? <Schedule /> : null}
-      <Col style={{ flexGrow: 1 }}>
-        {isStreaming ? <Stream /> : null}
-        <Row></Row>
+      {/* Main Col */}
+      <Col style={{ flexGrow: 1, maxHeight: "100%", overflow: "auto" }}>
+        {isLive ? <Stream /> : null}
+        <div>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+          <h1>Contenido Basura</h1>
+        </div>
+        <PageEnd lang={lang} />
       </Col>
     </Row>
   );

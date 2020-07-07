@@ -5,9 +5,8 @@ import Logo from "../_img/Untitled-2.png";
 import { NavLink } from "react-router-dom";
 import * as Icon from "react-feather";
 import { Menu, Dropdown } from "antd";
-const NavBar = ({ lang, setLanguage, texts }) => {
+const NavBar = ({ lang, setLanguage, texts, isLive }) => {
   let isLogged = false;
-  let isLive = true;
   const langMenu = (
     <Menu>
       {lang === "es" ? (

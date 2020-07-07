@@ -1,0 +1,41 @@
+.page-end-container {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+.important-links {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.important-link {
+  color: #a3a3a3;
+  font-size: 0.9em;
+  padding: 0 1em;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.important-link:hover {
+  color: #ff2400;
+  transition: all 0.3s;
+}
+
+.complete-logo img {
+  width: 100%;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  opacity: 0.3;
+}
+.info {
+  color: #e2e2e2;
+}

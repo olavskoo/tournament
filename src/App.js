@@ -19,14 +19,20 @@ const { Content } = Layout;
 function App() {
   // Este State Maneja el idioma
   const [language, setLanguage] = useState("es");
+  let isLive = false;
   return (
     <Router>
       <Layout style={{ height: "100%", backgroundColor: "#292d31" }}>
-        <Header lang={language} setLanguage={setLanguage} texts={texts} />
+        <Header
+          lang={language}
+          setLanguage={setLanguage}
+          texts={texts}
+          isLive={isLive}
+        />
         <Content style={{ height: "auto" }}>
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Home isLive={isLive} lang={language} />
             </Route>
             <Route path="/calendar">
               <Calendar />
