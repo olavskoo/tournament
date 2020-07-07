@@ -10,12 +10,13 @@ import { faClock } from '@fortawesome/free-solid-svg-icons'
 import PageEnd from "../_components/PageEnd";
 import Team1 from "../_img/team1.png";
 import Team2 from "../_img/team2.png";
-import ExampleImg from '../_img/example1.jpg'
-import ExampleImg2 from '../_img/example2.jpg'
-import ExampleImg3 from '../_img/example3.jpg'
-import AdImage from '../_img/ad.jpg'
-import AdImage2 from '../_img/ad2.jpg'
-import BannerImg from '../_img/banner.png'
+import ExampleImg from '../_img/example1.jpg';
+import ExampleImg2 from '../_img/example2.jpg';
+import ExampleImg3 from '../_img/example3.jpg';
+import AdImage from '../_img/ad.jpg';
+import AdImage2 from '../_img/ad2.jpg';
+import BannerImg from '../_img/banner.png';
+import FullWidthImage from '../_img/fullwidth.jpg';
 
 const Event = () => {
   return (
@@ -83,7 +84,11 @@ const FullWidthPost = () => {
   return (<Col span={24}>
     <div className="fullWidthPostContainer">
       <a>
-
+        <img src={FullWidthImage} alt="fullwidth-banner" />
+        <div className="fw-info">
+          <p className="fw-title">CS: GO</p>
+          <p className="fw-subtitle">¡Comienza tu viaje a la cima!</p>
+        </div>
       </a>
     </div>
   </Col>)
@@ -129,6 +134,8 @@ const Home = ({ isLive, lang }) => {
               <StandardPost img={ExampleImg3} content={'¿Logrará Full Impact conquistar la copa?'} />
               <FullWidthPost />
               <BannerPromo />
+              <StandardPost img={ExampleImg} content={'Esto a penas comienza'} />
+
             </Row>
           </Col>
           <Col span={5} style={{ padding: '1em', paddingTop: 0 }}>
