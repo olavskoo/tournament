@@ -38,7 +38,7 @@ const Stream = () => {
   return (
     <div style={{ height: "100%" }}>
       <ReactTwitchEmbedVideo
-        channel="lpl"
+        channel="caps"
         width={"100%"}
         height={"100%"}
         theme="dark"

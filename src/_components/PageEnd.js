@@ -1,12 +1,30 @@
 import React from "react";
 import "./PageEnd.css";
 import texts from "../_resources/texts.json";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faInstagram, faTwitch, faTwitter, faDiscord } from '@fortawesome/free-brands-svg-icons'
 const PageEnd = ({ lang }) => {
   return (
     <div
       className="page-end-container"
-      style={{ height: "auto", width: "100%", backgroundColor: "black" }}
     >
+      <div className="social-links">
+        <a class="social-a" href="#">
+          <FontAwesomeIcon icon={faTwitch} color={'white'} />
+        </a>
+        <a class="social-a" href="#">
+          <FontAwesomeIcon icon={faFacebook} color={'white'} />
+        </a>
+        <a class="social-a" href="#">
+          <FontAwesomeIcon icon={faDiscord} color={'white'} />
+        </a>
+        <a class="social-a" href="#">
+          <FontAwesomeIcon icon={faInstagram} color={'white'} />
+        </a>
+        <a class="social-a" href="#">
+          <FontAwesomeIcon icon={faTwitter} color={'white'} />
+        </a>
+      </div>
       <div className="important-links">
         <button className="important-link">{texts[lang].footer[1]}</button>
         <button className="important-link">{texts[lang].footer[2]}</button>

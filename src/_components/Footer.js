@@ -6,11 +6,8 @@ import "./Footer.css";
 const Footer = ({ lang, texts }) => {
   return (
     <div className="footer-container">
-      <div
-        className="logo-container"
-        style={{ display: "flex", justifyContent: "flex-start" }}
-      >
-        <img src={CompleteLogo} alt="complete-logo" className="brand-logo" />
+      <div className="logo-container">
+        <img src={CompleteLogo} alt="complete-logo" className="brand-logo bmllogo" />
       </div>
       <div className="logo-container">
         <img src={VoltLogo} alt="complete-logo" className="brand-logo" />
