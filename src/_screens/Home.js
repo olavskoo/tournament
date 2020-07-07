@@ -15,6 +15,7 @@ import ExampleImg2 from '../_img/example2.jpg'
 import ExampleImg3 from '../_img/example3.jpg'
 import AdImage from '../_img/ad.jpg'
 import AdImage2 from '../_img/ad2.jpg'
+import BannerImg from '../_img/banner.png'
 
 const Event = () => {
   return (
@@ -81,14 +82,20 @@ const StandardPost = ({ img, content }) => {
 const FullWidthPost = () => {
   return (<Col span={24}>
     <div className="fullWidthPostContainer">
-      <a></a>
+      <a>
+
+      </a>
     </div>
   </Col>)
 }
 const BannerPromo = () => {
   return (
     <Col span={24}>
-      <div className="bannerPromoContainer"></div>
+      <div className="bannerPromoContainer">
+        <a>
+          <img src={BannerImg} alt="" />
+        </a>
+      </div>
     </Col>
   )
 }

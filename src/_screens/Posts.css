@@ -85,7 +85,15 @@ p {
 .fullWidthPostContainer {}
 
 /* Banner */
-.bannerPromoContainer {}
+.bannerPromoContainer {
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+.bannerPromoContainer img {
+    width: 100%;
+    height: auto;
+}
 
 /* Ad Container */
 .adContainer {
