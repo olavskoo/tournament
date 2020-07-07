@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import { Row, Col } from "antd";
+import ReactTwitchEmbedVideo from "react-twitch-embed-video";
 // Others
 import Team1 from "../_img/team1.png";
 import Team2 from "../_img/team2.png";
@@ -33,8 +34,13 @@ const Schedule = () => {
 };
 const Stream = () => {
   return (
-    <Row>
-      <h1>Streaming!</h1>
+    <Row style={{ height: "100%" }}>
+      <ReactTwitchEmbedVideo
+        channel="lpl"
+        width={"100%"}
+        height={"100%"}
+        theme="dark"
+      />
     </Row>
   );
 };
@@ -44,7 +50,7 @@ const Home = () => {
   return (
     <Row style={{ height: "100%" }}>
       {isSchedule ? <Schedule /> : null}
-      <Col style={{ backgroundColor: "#ffffff", flexGrow: 1 }}>
+      <Col style={{ flexGrow: 1 }}>
         {isStreaming ? <Stream /> : null}
         <Row></Row>
       </Col>
