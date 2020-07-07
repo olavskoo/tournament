@@ -1,11 +1,21 @@
 import React from "react";
 import "./Home.css";
+import "./Posts.css";
 import { Row, Col } from "antd";
 import ReactTwitchEmbedVideo from "react-twitch-embed-video";
+// fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock } from '@fortawesome/free-solid-svg-icons'
 // Others
 import PageEnd from "../_components/PageEnd";
 import Team1 from "../_img/team1.png";
 import Team2 from "../_img/team2.png";
+import ExampleImg from '../_img/example1.jpg'
+import ExampleImg2 from '../_img/example2.jpg'
+import ExampleImg3 from '../_img/example3.jpg'
+import AdImage from '../_img/ad.jpg'
+import AdImage2 from '../_img/ad2.jpg'
+
 const Event = () => {
   return (
     <div className="event-container">
@@ -36,60 +46,94 @@ const Schedule = () => {
 };
 const Stream = () => {
   return (
-    <div style={{ height: "100%" }}>
+    <Row style={{ height: "100%" }}>
       <ReactTwitchEmbedVideo
-        channel="caps"
+        channel="lpl"
         width={"100%"}
         height={"100%"}
         theme="dark"
       />
-    </div>
+    </Row>
   );
 };
+const StandardPost = ({ img, content }) => {
+  return (
+    <Col span={12}>
+      <a>
+        <div className="standardPostContainer">
+          <div className="gradient"></div>
+          <div className="image">
+            <img src={img} alt="post-image" className="post-image" />
+          </div>
+          <p className="post-type">ARTICULO</p>
+          <div className="postFooter">
+            <p className="title">{content}</p>
+            <div className="posttimeago">
+              <FontAwesomeIcon icon={faClock} color={'white'} style={{ marginRight: '0.5em' }} />
+              <p className="date">01/01/2000 5:45:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </Col>
+  );
+}
+const FullWidthPost = () => {
+  return (<Col span={24}>
+    <div className="fullWidthPostContainer">
+      <a></a>
+    </div>
+  </Col>)
+}
+const BannerPromo = () => {
+  return (
+    <Col span={24}>
+      <div className="bannerPromoContainer"></div>
+    </Col>
+  )
+}
+const Ad = ({ img }) => {
+  return (
+    <div className="adContainer">
+      <img src={img} alt="ad-image" />
+    </div>
+  )
+}
 const Home = ({ isLive, lang }) => {
   let isSchedule = true;
+  let mainContent;
+  if (isSchedule === false) {
+    mainContent = 24;
+  } else {
+    mainContent = 21;
+  }
   return (
     <Row style={{ height: "100%" }}>
       {/* Events COL */}
       {isSchedule ? <Schedule /> : null}
       {/* Main Col */}
-      <Col style={{ flexGrow: 1, maxHeight: "100%", overflow: "auto" }}>
+      <Col span={mainContent} style={{ flexGrow: 1, height: "100%", overflow: "auto" }}>
         {isLive ? <Stream /> : null}
-        <div>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-          <h1>Contenido Basura</h1>
-        </div>
+        <Row style={{ minHeight: '100%', padding: '1em' }}>
+          <Col span={19}>
+            <Row gutter={[16, 0]}>
+              {/* Aqui comienzan los posts */}
+              <StandardPost img={ExampleImg2} content={'¡Conoce al nuevo campeón de League of Legends!'} />
+              <StandardPost img={ExampleImg3} content={'¿Logrará Full Impact conquistar la copa?'} />
+              <FullWidthPost />
+              <BannerPromo />
+            </Row>
+          </Col>
+          <Col span={5} style={{ padding: '1em', paddingTop: 0 }}>
+            {/* Aqui comienza la publicidad */}
+            <p className="ad-header">Publicidad</p>
+            <Ad img={AdImage} />
+            <Ad img={AdImage2} />
+          </Col>
+        </Row>
         <PageEnd lang={lang} />
       </Col>
-    </Row>
+    </Row >
   );
 };
 export default Home;
