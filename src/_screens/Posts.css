@@ -141,3 +141,29 @@ p {
     height: 250px;
     object-fit: cover;
 }
+
+.load-more-container-outter {
+    width: 100%;
+    padding: 2em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+.load-more-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0, 0, 0);
+}
+
+.load-more-container:hover {
+    background: rgb(12, 12, 12);
+    transition: all 0.3s;
+}
+
+.load-more-container h1 {
+    margin: 0;
+    color: white
+}

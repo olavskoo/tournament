@@ -6,6 +6,7 @@ import ReactTwitchEmbedVideo from "react-twitch-embed-video";
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons'
+import * as Icon from "react-feather";
 // Others
 import PageEnd from "../_components/PageEnd";
 import Team1 from "../_img/team1.png";
@@ -50,7 +51,7 @@ const Stream = () => {
   return (
     <Row style={{ height: "100%" }}>
       <ReactTwitchEmbedVideo
-        channel="lpl"
+        channel="lvpcl"
         width={"100%"}
         height={"100%"}
         theme="dark"
@@ -135,6 +136,13 @@ const Home = ({ isLive, lang }) => {
               <FullWidthPost />
               <BannerPromo />
               <StandardPost img={ExampleImg} content={'Esto a penas comienza'} />
+              <StandardPost img={ExampleImg2} content={'¡Conoce al nuevo campeón de League of Legends!'} />
+              <div className="load-more-container-outter">
+                <a className="load-more-container">
+                  <h1>Cargar más</h1>
+                  <Icon.ChevronDown color={'white'} />
+                </a>
+              </div>
 
             </Row>
           </Col>
