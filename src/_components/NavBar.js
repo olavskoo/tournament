@@ -74,7 +74,7 @@ const NavBar = ({ lang, setLanguage, texts, isLive }) => {
             <Icon.Globe color={"#e2e2e2"} />
           </a>
         </Dropdown>
-        <a className="control">
+        <a className="control" href="login.html">
           <Icon.User color={"#e2e2e2"} />
           {isLogged ? null : (
             <p class="control-stamp">{texts[lang].login_stamp}</p>

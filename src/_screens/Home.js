@@ -162,6 +162,8 @@ const Home = ({ isLive, lang }) => {
                 content={"¡Conoce al nuevo campeón de League of Legends!"}
                 type={"VIDEO"}
               />
+            </Row>
+            <Row>
               <div className="load-more-container-outter">
                 <a className="load-more-container">
                   <h1>Cargar más</h1>
