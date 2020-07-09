@@ -2,11 +2,10 @@ import React from "react";
 import "./Header.css";
 import Logo from "../_img/Untitled-2.png";
 // react-router-dom
-import { Link, NavLink, useRouteMatch } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import * as Icon from "react-feather";
 import { Menu, Dropdown } from "antd";
 const Header = ({ lang, setLanguage, texts, isLive }) => {
-  const { url, path } = useRouteMatch();
   let isLogged = false;
   const langMenu = (
     <Menu>
@@ -17,12 +16,12 @@ const Header = ({ lang, setLanguage, texts, isLive }) => {
           </button>
         </Menu.Item>
       ) : (
-        <Menu.Item>
-          <button className="language-button" onClick={() => setLanguage("es")}>
-            Spanish
+          <Menu.Item>
+            <button className="language-button" onClick={() => setLanguage("es")}>
+              Spanish
           </button>
-        </Menu.Item>
-      )}
+          </Menu.Item>
+        )}
     </Menu>
   );
   return (
