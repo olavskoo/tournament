@@ -10,7 +10,7 @@ const Footer = ({ lang, texts }) => {
         <img src={CompleteLogo} alt="complete-logo" className="brand-logo bmllogo" />
       </div>
       <div className="logo-container">
-        <img src={VoltLogo} alt="complete-logo" className="brand-logo" />
+        <img src={VoltLogo} alt="complete-logo" className="brand-logo voltlogo" />
       </div>
       <div className="logo-container">
         <img src={LogitechLogo} alt="complete-logo" className="brand-logo" />

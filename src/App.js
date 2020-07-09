@@ -20,6 +20,7 @@ import Teams from "./_screens/Teams";
 import Login from "./_screens/Login";
 import SignUp from "./_screens/SignUp";
 import Error from "./_screens/Error";
+import Article from './_screens/Article';
 // Ant Design
 import { Layout } from "antd";
 const { Content } = Layout;
@@ -52,6 +53,9 @@ function App() {
                 </Route>
                 <Route path="/home/teams">
                   <Teams />
+                </Route>
+                <Route path="/home/article">
+                  <Article />
                 </Route>
               </Switch>
             </Content>
