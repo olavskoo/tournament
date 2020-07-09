@@ -1,13 +1,13 @@
 import React from "react";
-import "./NavBar.css";
+import "./Header.css";
 import Logo from "../_img/Untitled-2.png";
 // react-router-dom
-import { NavLink, useRouteMatch } from "react-router-dom";
+import { Link, NavLink, useRouteMatch } from "react-router-dom";
 import * as Icon from "react-feather";
 import { Menu, Dropdown } from "antd";
-const NavBar = ({ lang, setLanguage, texts, isLive }) => {
+const Header = ({ lang, setLanguage, texts, isLive }) => {
+  const { url, path } = useRouteMatch();
   let isLogged = false;
-  let { url } = useRouteMatch();
   const langMenu = (
     <Menu>
       {lang === "es" ? (
@@ -17,46 +17,46 @@ const NavBar = ({ lang, setLanguage, texts, isLive }) => {
           </button>
         </Menu.Item>
       ) : (
-          <Menu.Item>
-            <button className="language-button" onClick={() => setLanguage("es")}>
-              Spanish
+        <Menu.Item>
+          <button className="language-button" onClick={() => setLanguage("es")}>
+            Spanish
           </button>
-          </Menu.Item>
-        )}
+        </Menu.Item>
+      )}
     </Menu>
   );
   return (
     <div className="header">
       <nav>
-        <NavLink to='/' className="logo">
+        <NavLink to="/home" className="logo">
           <img src={Logo} alt="" className="logo" />
         </NavLink>
         <NavLink
           className="link"
           activeStyle={{ color: "#ff2400" }}
           exact
-          to="/"
+          to="/home"
         >
           {texts[lang].nav[1]}
         </NavLink>
         <NavLink
           className="link"
           activeStyle={{ color: "#ff2400" }}
-          to={`${url}/calendar`}
+          to="/home/calendar"
         >
           {texts[lang].nav[2]}
         </NavLink>
         <NavLink
           className="link"
           activeStyle={{ color: "#ff2400" }}
-          to={`${url}/ranking`}
+          to="/home/ranking"
         >
           {texts[lang].nav[3]}
         </NavLink>
         <NavLink
           className="link"
           activeStyle={{ color: "#ff2400" }}
-          to={`${url}/teams`}
+          to="/home/teams"
         >
           {texts[lang].nav[4]}
         </NavLink>
@@ -75,14 +75,14 @@ const NavBar = ({ lang, setLanguage, texts, isLive }) => {
             <Icon.Globe color={"#e2e2e2"} />
           </a>
         </Dropdown>
-        <a className="control" href="login.html">
+        <Link className="control" to="/login">
           <Icon.User color={"#e2e2e2"} />
           {isLogged ? null : (
             <p class="control-stamp">{texts[lang].login_stamp}</p>
           )}
-        </a>
+        </Link>
       </div>
     </div>
   );
 };
-export default NavBar;
+export default Header;

@@ -1,5 +1,10 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 const Login = () => {
-    return (<><h2>Hola esto es el Login</h2></>);
-}
+  return (
+    <>
+      <Link to="/">Ir a Home</Link>
+    </>
+  );
+};
 export default Login;

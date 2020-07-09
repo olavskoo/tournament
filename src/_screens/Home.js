@@ -51,7 +51,7 @@ const Stream = () => {
   return (
     <Row style={{ height: "100%" }}>
       <ReactTwitchEmbedVideo
-        channel="lvpcl"
+        channel="lck"
         width={"100%"}
         height={"100%"}
         theme="dark"
