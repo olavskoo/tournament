@@ -2,11 +2,12 @@ import React from "react";
 import "./NavBar.css";
 import Logo from "../_img/Untitled-2.png";
 // react-router-dom
-import { NavLink } from "react-router-dom";
+import { NavLink, useRouteMatch } from "react-router-dom";
 import * as Icon from "react-feather";
 import { Menu, Dropdown } from "antd";
 const NavBar = ({ lang, setLanguage, texts, isLive }) => {
   let isLogged = false;
+  let { url } = useRouteMatch();
   const langMenu = (
     <Menu>
       {lang === "es" ? (
@@ -16,18 +17,18 @@ const NavBar = ({ lang, setLanguage, texts, isLive }) => {
           </button>
         </Menu.Item>
       ) : (
-        <Menu.Item>
-          <button className="language-button" onClick={() => setLanguage("es")}>
-            Spanish
+          <Menu.Item>
+            <button className="language-button" onClick={() => setLanguage("es")}>
+              Spanish
           </button>
-        </Menu.Item>
-      )}
+          </Menu.Item>
+        )}
     </Menu>
   );
   return (
     <div className="header">
       <nav>
-        <NavLink to="/" className="logo">
+        <NavLink to='/' className="logo">
           <img src={Logo} alt="" className="logo" />
         </NavLink>
         <NavLink
@@ -41,21 +42,21 @@ const NavBar = ({ lang, setLanguage, texts, isLive }) => {
         <NavLink
           className="link"
           activeStyle={{ color: "#ff2400" }}
-          to="/calendar"
+          to={`${url}/calendar`}
         >
           {texts[lang].nav[2]}
         </NavLink>
         <NavLink
           className="link"
           activeStyle={{ color: "#ff2400" }}
-          to="/ranking"
+          to={`${url}/ranking`}
         >
           {texts[lang].nav[3]}
         </NavLink>
         <NavLink
           className="link"
           activeStyle={{ color: "#ff2400" }}
-          to="/teams"
+          to={`${url}/teams`}
         >
           {texts[lang].nav[4]}
         </NavLink>
