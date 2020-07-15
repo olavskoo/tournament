@@ -1,5 +1,6 @@
 import React from "react";
+
 const Calendar = () => {
-  return <h1>Calendar</h1>;
+  return <h1>Calendario</h1>;
 };
 export default Calendar;

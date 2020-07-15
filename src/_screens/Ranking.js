@@ -1,5 +1,13 @@
 import React from "react";
-const Ranking = () => {
-  return <h1>Ranking</h1>;
+import ScrollContainer from 'react-indiana-drag-scroll'
+// Brackets
+import Testing from './_brackets/Testing';
+
+function Ranking() {
+  return (
+    <ScrollContainer style={{ overflow: 'auto', height: '150%', width: 'auto', position: 'relative', display: 'flex' }}>
+      <Testing />
+    </ScrollContainer>
+  );
 };
 export default Ranking;
