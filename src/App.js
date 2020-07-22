@@ -20,15 +20,15 @@ import Teams from "./_screens/Teams";
 import Login from "./_screens/Login";
 import SignUp from "./_screens/SignUp";
 import Error from "./_screens/Error";
-import Article from './_screens/Article'
+import Article from "./_screens/Article";
 // Ant Design
 import { Layout } from "antd";
 const { Content } = Layout;
 function App() {
   // Este State Maneja el idioma
-  const [language, setLanguage] = useLocalStorage('lang', 'es');
+  const [language, setLanguage] = useLocalStorage("lang", "es");
   // const [language, setLanguage] = useState("es");
-  let isLive = true;
+  let isLive = false;
   return (
     <Router>
       <Switch>
@@ -89,7 +89,7 @@ function useLocalStorage(key, initialValue) {
 
   // Return a wrapped version of useState's setter function that ...
   // ... persists the new value to localStorage.
-  const setValue = value => {
+  const setValue = (value) => {
     try {
       // Allow value to be a function so we have same API as useState
       const valueToStore =

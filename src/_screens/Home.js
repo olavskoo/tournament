@@ -119,7 +119,7 @@ const Ad = ({ img }) => {
   );
 };
 const Home = ({ isLive, lang }) => {
-  let isSchedule = true;
+  let isSchedule = false;
   let mainContent;
   if (isSchedule === false) {
     mainContent = 24;
@@ -172,9 +172,20 @@ const Home = ({ isLive, lang }) => {
               </div>
             </Row>
           </Col>
-          <Col span={5} style={{ padding: "1em", paddingTop: 0, paddingRight: 0 }}>
+          <Col
+            span={5}
+            style={{ padding: "1em", paddingTop: 0, paddingRight: 0 }}
+          >
             {/* Aqui comienza la publicidad */}
-            <p style={{ color: 'grey', fontSize: '0.7em', marginBottom: '0.5em' }}>Publicidad</p>
+            <p
+              style={{
+                color: "grey",
+                fontSize: "0.7em",
+                marginBottom: "0.5em",
+              }}
+            >
+              Publicidad
+            </p>
             <Ad img={AdImage} />
             <Ad img={AdImage2} />
           </Col>
